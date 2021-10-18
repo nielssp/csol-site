@@ -1,0 +1,84 @@
+{LAYOUT = 'layout.plet.html'}
+<nav>
+  <a href="https://nielssp.dk">&larr; nielssp.dk</a>
+  <a href="https://github.com/nielssp/csol" class="github">
+    View on GitHub
+    <img src="{'github.png' | asset_link}" width=24/>
+  </a>
+</nav>
+<header>
+  <div class="grow">
+    <h1>
+      csol
+    </h1>
+    <p class="large">
+      A small collection of console solitaire/patience games for Linux, Windows, and DOS.
+    </p>
+    <div class="downloads">
+      <div>
+        csol {CONFIG.version} for Linux (Source)
+        <a href="https://github.com/nielssp/csol/archive/refs/tags/v{CONFIG.version}.tar.gz" class="button">Download</a>
+      </div>
+      <div>
+        csol {CONFIG.version} for Arch Linux
+        <a href="https://aur.archlinux.org/packages/csol/" class="button">Download</a>
+      </div>
+      <div>
+        csol {CONFIG.version} for Windows
+        <a href="https://github.com/nielssp/csol/releases/download/{CONFIG.version}/csol-win.zip" class="button">Download</a>
+      </div>
+      <div>
+        csol {CONFIG.version} for DOS
+        <a href="https://github.com/nielssp/csol/releases/download/{CONFIG.version}/csol-dos.zip" class="button">Download</a>
+      </div>
+    </div>
+  </div>
+  <div class="side-image">
+    <img src="{'csol.png' | asset_link}" />
+  </div>
+</header>
+<section>
+  <div class="columns">
+    <div>
+      <h2 class="red">Features</h2>
+      <div>
+        <ul>
+          <li>Play Klondike, Yukon, FreeCell, Spider, Golf, and more.</li>
+          <li>Themes</li>
+          <li>Simple keyboard controls</li>
+          <li>Mouse support</li>
+          <li>Free and Open Source</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h2 class="purple">Quickstart</h2>
+      <div>
+        <ul>
+          <li>Download and install csol from one of the above links.</li>
+          <li>Run <code>csol -l</code> to list the available games.</li>
+          <li>Run <code>csol klondike</code> to start Klondike Solitaire.</li>
+          <li>Use the arrow keys (or HJKL) to move the cursor.</li>
+          <li>Press <kbd>Space</kbd> to select the card under the cursor.</li>
+          <li>With a card selected, move the cursor again and press <kbd>Enter</kbd> (or <kbd>M</kbd>) to move the selected card to the position under the cursor.</li>
+          <li>Pressing <kbd>A</kbd> will automatically move a card to the foundation if possible.</li>
+          <li>Press <kbd>R</kbd> to reshuffle or <kbd>Q</kbd> to quit.</li>
+        </ul>
+        <a href="https://github.com/nielssp/csol/blob/master/README.md">Read the manual</a>
+      </div>
+    </div>
+    <div>
+      <h2 class="yellow">News</h2>
+      <ul class="news">
+        {for post in posts}
+        <li>
+          <a href="{link(post.link)}" itemprop="name headline url">{post.title | h}</a>
+          <time datetime="{post.published | iso8601}" title="{post.published | date('%F %T %Z')}" itemprop="datePublished">{post.published | date('%e %B %Y')}</time>
+        </li>
+        {end for}
+      </ul>
+      <div><a href="{'news' | link}">More</a> / <a href="{'news.rss' | link}">RSS</a></div>
+    </div>
+  </div>
+</section>
+<div style="font-size: 32px; margin: 32px 0;">♣</div>

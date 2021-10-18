@@ -1,0 +1,22 @@
+export CONFIG = {
+  title: 'csol',
+  description: 'A small collection of console solitaire/patience games',
+  version: '1.4.1',
+}
+
+export ROOT_PATH = '/'
+
+posts = list_content('news', {suffix: '.md'}) | filter(p => p.published?) | sort_by_desc(.published)
+
+for post in posts
+  post.link = "news/{post.name}/index.html"
+  add_page(post.link, 'post.plet.html', {
+    post: post
+  })
+  add_reverse(post.path, post.link)
+end for
+
+add_page('news/index.html', 'news.plet.html', {posts: posts})
+add_page('news.rss', 'news.plet.rss', {posts: posts | take(30)})
+
+add_page('index.html', 'index.plet.html', {posts: posts | take(10)})

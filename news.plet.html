@@ -1,0 +1,18 @@
+{LAYOUT = 'layout.plet.html'}
+{TITLE = "{CONFIG.title} news"}
+<nav>
+  <a href="{'/' | link}">&larr; {CONFIG.title}</a>
+  <a href="{'/news.rss' | link}" class="rss">RSS</a>
+</nav>
+<section>
+  <h1 class="yellow">News</h1>
+  <ul class="news">
+    {for post in posts}
+    <li>
+      <a href="{link(post.link)}" itemprop="name headline url">{post.title | h}</a>
+      <time datetime="{post.published | iso8601}" title="{post.published | date('%F %T %Z')}" itemprop="datePublished">{post.published | date('%e %B %Y')}</time>
+    </li>
+    {end for}
+  </ul>
+</section>
+

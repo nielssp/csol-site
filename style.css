@@ -1,0 +1,227 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 3.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 + time {
+  display: block;
+  margin: -1em 0 1em 0;
+  text-align: right;
+}
+
+h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.5em;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+
+header,
+section,
+nav {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  padding: 32px 16px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  min-height: 88px;
+}
+
+nav > .rss {
+  margin-left: auto;
+}
+
+.github {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.github > img {
+  margin-left: 8px;
+}
+
+header {
+  display: flex;
+}
+
+header h1 {
+  font-size: 7em;
+  margin-bottom: 0.25em;
+}
+
+header > * + * {
+  margin-left: 32px;
+}
+
+.side-image {
+  text-align: center;
+}
+
+.side-image img {
+  max-width: 100%;
+}
+
+.columns {
+  display: flex;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.columns > * {
+  flex: 1 0 33.3333%;
+  padding: 0 16px;
+  max-width: 33.3333%;
+}
+
+@media screen and (max-width: 996px) {
+  header {
+    flex-direction: column;
+  }
+
+  header > * + * {
+    margin-left: 0;
+    margin-top: 32px;
+  }
+
+  .columns {
+    flex-direction: column;
+    margin: 0;
+    align-items: stretch;
+  }
+
+  .columns > * {
+    flex: 0 0 auto;
+    max-width: initial;
+    padding: 0;
+  }
+
+  .columns > * + * {
+    margin-top: 32px;
+  }
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+p.large {
+  font-size: 1.2em;
+}
+
+a {
+  color: #9E3743;
+}
+
+.red {
+  border-bottom: 3px solid #9E3743;
+  padding-bottom: 4px;
+}
+
+.purple {
+  border-bottom: 3px solid #6B3A6A;
+  padding-bottom: 4px;
+}
+
+.yellow {
+  border-bottom: 3px solid #FD9641;
+  padding-bottom: 4px;
+}
+
+.button {
+  background-color: #9E3743;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  transition: background-color ease-in-out 0.1s, color ease-in-out 0.1s;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.button:active {
+  background-color: #fff;
+  border: 1px solid #9E3743;
+  color: #9E3743;
+}
+
+.downloads > div {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.downloads > div > .button {
+  margin-left: auto;
+}
+
+.news {
+  margin-left: 0;
+  list-style-type: none;
+}
+
+.news > li {
+  display: flex;
+}
+
+.news > li > time {
+  margin-left: auto;
+}
+
+ul, ol {
+  padding: 0;
+  margin: 0 0 1em 16px;
+}
+
+ul ul, ol ol {
+  margin: 0 0 0 16px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+code {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+  padding: 0 4px;
+}
+
+kbd {
+  background-color: #f1f1f1;
+  color: #000;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  font-weight: normal;
+  font-family: "Courier New", monospace;
+  padding: 0 4px;
+}

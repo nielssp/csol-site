@@ -1,0 +1,10 @@
+{LAYOUT = 'layout.plet.html'}
+{TITLE = post.title}
+<nav>
+  <a href="{'/news' | link}">&larr; {CONFIG.title} news</a>
+</nav>
+<section>
+  <h1 class="yellow">{post.title | h}</h2>
+  <time datetime="{post.published | iso8601}" title="{post.published | date('%F %T %Z')}" itemprop="datePublished">{post.published | date('%A, %e %B %Y')}</time>
+  <div itemprop="articleBody">{post.html | no_title | images(736, 736, 90, true) | links | html}</div>
+</section>
